@@ -34,6 +34,7 @@ Neither mode guarantees that the platform prevents overlapping executions. A sin
 - [External references and evidence status](docs/references.md)
 - [Serial Native live proving experiment and evidence ledger](proving/README.md)
 - [Post-restoration independent task audit](proving/post-restore-audit.md)
+- [Neurounner #67 production continuation proof](proving/neurounner-67/README.md)
 - [Next qualification priorities](docs/next-qualification.md)
 
 ## Guardrails
