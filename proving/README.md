@@ -15,6 +15,8 @@ The disposable task has no permission to modify unrelated tasks, send external c
 - [Protocol and pass/fail rules](protocol.md): phases, strict proof gates, and treatment of run-now versus scheduled executions.
 - [Experiment evidence ledger](evidence.md): **only actually observed** IDs, task metadata, transition results, and blockers.
 - [Task prompt fixture](seed-prompt.md): canonical generation-0 prompt; the actual task ID is pinned after creation and must be verified against readback.
+- [Second-run acceptance](second-run-evidence.md): contemporaneous scheduled G1→G2 proof and self-pause.
+- [Post-restoration independent audit](post-restore-audit.md): restored repository and completed task history reconciled against archived evidence.
 
 ## Proof requirements
 
@@ -32,6 +34,6 @@ The agent should generate a fresh marker in execution 1; the marker must not alr
 
 ## Status
 
-See [evidence.md](evidence.md). **Do not infer a PASS solely because the task was created, triggered, or because an interactive session edited its prompt.**
+**PASS — bounded two-scheduled-run continuation.** The verified run outputs, G2 task prompt and disabled state support the core claim; the second run is now recorded **completed**. Concurrency, failed updates and long-term robustness were **not** tested. See [evidence](evidence.md) and [post-restoration audit](post-restore-audit.md). **Do not infer a PASS solely because a task was created, triggered or edited from interactive chat.**
 
 Related design: [Serial Native](../docs/serial-native.md), [qualification](../docs/verification.md).

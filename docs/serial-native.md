@@ -2,7 +2,7 @@
 
 **Primary use:** lightweight serial work where storing the successor prompt inside the **same scheduled task** is more convenient than maintaining a repository.
 
-**Qualification status (2026-10-30): EXPERIMENTAL.** ChatGPT currently provides scheduled-task editing, and the available task interface exposes prompt update and task readback. That does **not** prove a scheduled run can successfully update *its own* prompt for the next invocation. The latter requires a live two-run test.
+**Qualification status (2026-10-30): CORE CONTINUATION PROVEN, FAULT TOLERANCE EXPERIMENTAL.** A disposable task rewrote its own prompt during one clock-scheduled execution; a second independent clock-scheduled execution read the replacement instructions, consumed an unpredictable first-run marker, updated the same prompt again and disabled itself. A post-restoration readback verified **STAGE=2**, `is_enabled=false`, the unchanged fixed contract and a **completed** second run. See [evidence](../proving/evidence.md) and [independent audit](../proving/post-restore-audit.md). This does **not** prove exclusivity under overlap, denied-write recovery, portability to every configuration or long-term reliability.
 
 ## Model
 
@@ -37,7 +37,7 @@ Use a harmless two-run experiment:
 - **Run 2:** verify that the same scheduled task now actually executes the generation 1 instructions, references the previous marker, and progresses to generation 2 without schedule or contract drift.
 - After both runs, inspect the saved task record, history and any notifications. Failure to access the update tool, missing readback, stale instructions, wrong task ID, or changed schedule is a failed trial.
 
-This repository **does not claim to have performed** that experiment. It also does not instantiate a recurring task for the user by merely documenting this design.
+This experiment **was performed** on 2026-10-30 using task `6ae4d7275c348191a5b4b70dbd0cd95b`: G0→G1 and G1→G2 ran as separate scheduled executions and the task was disabled after successful readbacks. The proof task is historical and **must not be restarted for another project**. Details: [acceptance](../proving/second-run-evidence.md) and [final reconciliation](../proving/post-restore-audit.md).
 
 ## Failure handling
 
@@ -55,10 +55,10 @@ This repository **does not claim to have performed** that experiment. It also do
 
 **Advantages:** no repository, file hosting or Git permissions needed for persistence; one schedule and one editable prompt; straightforward operator inspection.
 
-**Limitations:** weaker historical audit, more difficult rollback, prompt size/drift risk, unclear self-edit capability inside scheduled execution until tested, and no reliable compare-and-swap semantics for prompt updates. Retaining a human-readable copy of the fixed contract outside the task improves recovery, but doing so is optional and weakens the strict 'no external state' ideal.
+**Limitations:** weaker historical audit, more difficult rollback, prompt size/drift risk, task self-edit demonstrated only in the tested configuration, and no established compare-and-swap semantics for prompt updates. Retaining a human-readable copy of the fixed contract outside the task improves recovery, but doing so is optional and weakens the strict 'no external state' ideal.
 
 Do not store credentials or sensitive personal information in a task prompt; sharing an eligible task can expose its saved instructions. See [OpenAI Scheduled Tasks guidance](references.md).
 
 ## Status
 
-Recommended as a **small proof of concept first**, not yet as an unattended production workflow.
+The minimal **self-edit + successor scheduled run** mechanism is empirically demonstrated; it remains a **prototype** for real engineering workloads until the guarded-retry, stale-generation, interrupted-execution and operational recovery tests in [next qualification priorities](next-qualification.md) pass. Do not imply exactly-once delivery or a scheduler-level exclusive lock.

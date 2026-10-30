@@ -16,7 +16,7 @@ Only append or correct entries with evidence that can be traced to the saved tas
 | Schedule and timezone | `DTSTART:20261030T180000; RRULE:FREQ=HOURLY;COUNT=3` (Europe/London) |
 | Baseline generation | 0 (planned) |
 | Current saved generation | **2**, independently read back after the second scheduled execution |
-| Current run status | First execution completed; second run `be50fba6-6310-8330-a848-d0fd4f3d111b` had verified G2 and pause side effects; final run status still `in_progress` at audit |
+| Current run status | First execution completed; second run `be50fba6-6310-8330-a848-d0fd4f3d111b` **completed at `2026-10-30T19:05:45.421572Z`**; final stored prompt **STAGE=2**, task **disabled** (verified after repository restoration) |
 | Current verdict | **PASS — core two-run scheduled continuation; broader fault-injection/overlap qualification outstanding** |
 
 ## Execution records
@@ -31,7 +31,7 @@ Only append or correct entries with evidence that can be traced to the saved tas
 
 ## Negative evidence and limitations
 
-- First run was subsequently recorded with a completed result. Second run was observed executing, advancing G1 to G2 and disabling the task; at audit time its history entry remained `in_progress` pending final completion/delivery bookkeeping.
+- At the **original contemporaneous audit**, the second run had already advanced G1→G2 and disabled the task but its history entry remained `in_progress` pending completion bookkeeping. At the **post-restoration audit on 2026-10-30**, its task-history entry was **completed**, scheduled for `19:00:00Z`, started `19:00:24.958881Z`, completed `19:05:45.421572Z`; its saved G2 prompt and disabled state still matched the original evidence. See [post-restoration readback](post-restore-audit.md).
 - First-run marker was generated during the scheduled execution and was absent from G0. Runner updated **only** the saved prompt; a separate task-management readback verified the exact G1 replacement and unchanged fixed contract, ID, schedule, title, timezone and enabled state.
 - First run was scheduled for 18:00 UTC and observed as started at 17:57:26 UTC, slightly before the nominal scheduled time; record actual timestamps rather than claiming it ran precisely at 18:00.
 - The creation prompt originally contained the placeholder `TASK_ID=PIN_AFTER_CREATION`; the supervising interactive chat replaced it with the actual returned ID and verified the post-setup prompt. **That supervised update is not the self-edit being tested.**

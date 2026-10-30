@@ -1,6 +1,6 @@
 # Qualification plan and acceptance criteria
 
-**As of 2026-10-30:** Documentation and templates only. No Scheduserial scheduled execution or self-edit trial has been performed by this repository setup.
+**As of 2026-10-30:** The **Serial Native two-scheduled-run core test passed** on a disposable task, including verified prompt self-edit, successor consumption and self-pause. Task history now records the second scheduled run completed. See [post-restoration audit](../proving/post-restore-audit.md). Serial Git's scheduled-run test and Serial Native's negative/fault-injection cases remain open.
 
 The core claim to test is **continuation across independent scheduled executions**, not merely an agent writing a plausible handover at the end of one chat.
 
@@ -40,7 +40,7 @@ The core claim to test is **continuation across independent scheduled executions
 | N-07 | Overlap/stale generation | Evidence demonstrates safe refusal or documents an unresolved race (no strict-serial claim) |
 | N-08 | Completion behaviour | Verified goal completion pauses task with readback, or requests owner action if unsupported |
 
-**Native verdict:** only after run 1 and run 2 *both occurred as scheduled*, task identity and content were re-read, and the transition was confirmed. Supported manual task editing is not enough.
+**Native verdict (observed 2026-10-30):** N-01, N-02, N-03, N-04 and N-08 **PASS** in the disposable task, with separate scheduled executions and exact prompt/readback evidence. N-05 (wrong-ID refusal), N-06 (denied update) and N-07 (overlap/stale-generation handling) **NOT TESTED**. A core proof is **not** a general resilience or strict-exclusive-execution claim. [Detailed audit](../proving/post-restore-audit.md).
 
 ## Evidence record for each execution
 
@@ -81,7 +81,7 @@ Where no digest or run ID can be obtained from the platform, say **not available
 ## Go/no-go
 
 - **Serial Git:** documentation and manual Git writes may be proven separately from *scheduled* continuity; do not conflate them.
-- **Serial Native:** cannot be marked functional until a real scheduled execution demonstrably self-edits and a later scheduled execution consumes that revision.
+- **Serial Native:** the bounded two-run core handover is **functional in the tested configuration**; safe unattended production use remains gated on negative-path and operational-recovery qualification.
 - **Strict exclusivity:** remains unproven without an appropriate scheduler guarantee or independently validated ownership mechanism, even when ordinary serial handover passes.
 
 Keep this document updated with links and exact results from future trials; never replace pending states with assertions of success without cited evidence.

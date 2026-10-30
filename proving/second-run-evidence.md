@@ -13,3 +13,7 @@
 **Qualification boundary:** P0–P4 of [protocol.md](protocol.md) passed for this two-scheduled-execution test; no manual run-now trigger was used. This demonstrates prompt self-editing and successor consumption in this bounded experiment, **not** transactional exclusivity, safe overlapping runs, stale-generation refusal, denied-update handling or long-term reliability. The second run's final delivery/completion status had not yet been recorded when audited.
 
 The first execution's observed start time (`17:57:26Z`) precedes its nominal scheduled time (`18:00:00Z`); the schedule record, rather than a claim of exact wall-clock start, is cited.
+
+## Subsequent completion confirmation (30 October 2026)
+
+This report preserves the **contemporaneous** `in_progress` qualification above. After the deleted repository was restored, a fresh task-manager read returned the second run as **completed** at `2026-10-30T19:05:45.421572Z`, with the same run ID, saved `STAGE=2`, unchanged fixed contract, and the disposable task still **disabled**. See [independent post-restoration audit](post-restore-audit.md).

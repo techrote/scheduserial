@@ -22,12 +22,13 @@ The core reason for this design is **reducing orchestration to a stable trigger 
 
 At design time, the available interactive task management interface included an **update-existing-task** operation supporting prompt replacement while omitted schedule fields remain unchanged, plus an existing-task read operation. The linked GitHub connection supported reading files and writing content with expected blob SHAs.
 
-Those are **interface observations**, not recorded successful end-to-end test results for Scheduserial. In particular:
+Those were **interface observations at design time**. A separate live test subsequently established the narrower behavioural claim:
 
-- **Documented:** a person can edit a scheduled task; compatible authorized tool interfaces may expose task updates.
-- **Unverified:** whether a task can edit **itself while executing on a schedule**, and whether a later independent scheduled execution sees and obeys that new prompt.
-- **Unverified:** a strict no-overlap execution guarantee for either mode.
-- **Unverified:** a two-execution Git continuation using this design.
+- **Demonstrated 2026-10-30:** one scheduled execution self-edited the same task's stored prompt from G0 to G1; a second scheduled execution consumed its novel marker, wrote G2 and disabled the task. Its second run now has a **completed** task-history record. [Primary evidence](../proving/evidence.md) and [post-restoration readback](../proving/post-restore-audit.md).
+- **Still unverified:** a strict no-overlap execution guarantee, transactional prompt update, negative-path recovery, arbitrary-configuration portability and long-term reliability.
+- **Still unverified:** a two-execution Serial Git continuation using this design.
+
+Do not confuse the observed scheduled-task behaviour with a guarantee made by the external Help Center article.
 
 See [qualification plan](verification.md). Any future claims of success must identify task ID, run IDs/timestamps, old/new prompt or Git SHAs, readback evidence, and the result of the next invocation. Avoid claiming a passing experiment solely from documentation, hypothetical workflows or manual edits.
 

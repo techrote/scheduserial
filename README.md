@@ -33,6 +33,8 @@ Neither mode guarantees that the platform prevents overlapping executions. A sin
 - [Copyable Serial Native scheduled-task prompt](templates/serial-native-task.md)
 - [External references and evidence status](docs/references.md)
 - [Serial Native live proving experiment and evidence ledger](proving/README.md)
+- [Post-restoration independent task audit](proving/post-restore-audit.md)
+- [Next qualification priorities](docs/next-qualification.md)
 
 ## Guardrails
 
@@ -46,7 +48,7 @@ Neither mode guarantees that the platform prevents overlapping executions. A sin
 
 ## Status
 
-**30 October 2026:** A disposable Serial Native task passed the core two-execution scheduled proof: G0→G1 self-edit, G1 consumed by a separate execution, G1→G2 edit and verified self-pause. [Evidence](proving/evidence.md). Fault handling and exclusive execution remain unqualified. Serial Git is not yet verified.
+**30 October 2026:** A disposable Serial Native task passed the core two-execution scheduled proof: G0→G1 self-edit, G1 consumed by a separate execution, G1→G2 edit and verified self-pause. The second execution has now also been recorded **completed** in task history, and the task remains **disabled**. The GitHub repository was restored with its original ID and proof commits intact; see [post-restoration audit](proving/post-restore-audit.md). Fault handling, overlapping execution and long-term reliability remain unqualified. Serial Git has not yet passed a scheduled continuation test.
 
 ## Scope
 

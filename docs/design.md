@@ -2,7 +2,7 @@
 
 **Decision:** Adopt a small serial continuation protocol with two interchangeable persistence mechanisms.  
 **Recorded:** 2026-10-30.  
-**State:** Design accepted for documentation; unattended execution and self-edit behaviour not yet qualified.
+**State:** Serial Native's **bounded two-independent-scheduled-run continuation** passed on 2026-10-30, including self-edit, successor consumption and self-pause; [post-restoration evidence](../proving/post-restore-audit.md). Serial Git, concurrency handling and long-term reliability remain unqualified.
 
 ## Problem and constraints
 
