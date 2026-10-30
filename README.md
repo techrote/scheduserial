@@ -9,7 +9,7 @@ Scheduserial makes an ordinary recurring task useful across many independent exe
 | Mode | Source of next instructions | Best for | Maturity |
 | --- | --- | --- | --- |
 | **Serial Git** | A version-controlled `handover.md` in the target repository | Code, research and auditable projects | Design documented; end-to-end scheduled-run trial pending |
-| **Serial Native** | The scheduled task's *own prompt*, replaced after each run | Repo-free, lightweight recurring work | **Experimental:** task prompt editing is supported, but self-editing from within a scheduled execution has **not** been demonstrated |
+| **Serial Native** | The scheduled task's *own prompt*, replaced after each run | Repo-free, lightweight recurring work | **Two-run core proven:** separately scheduled executions completed G0→G1→G2 and verified pause; concurrency/fault handling remain untested |
 
 Neither mode guarantees that the platform prevents overlapping executions. A single scheduled task is a *single logical writer*, not automatically a distributed lock. Use bounded work, explicit ownership checks and a sufficient interval; see the validation plan before unattended reliance.
 
