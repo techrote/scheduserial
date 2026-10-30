@@ -32,6 +32,7 @@ Neither mode guarantees that the platform prevents overlapping executions. A sin
 - [Copyable Serial Git scheduled-task prompt](templates/serial-git-task.md)
 - [Copyable Serial Native scheduled-task prompt](templates/serial-native-task.md)
 - [External references and evidence status](docs/references.md)
+- [Serial Native live proving experiment and evidence ledger](proving/README.md)
 
 ## Guardrails
 
@@ -45,7 +46,7 @@ Neither mode guarantees that the platform prevents overlapping executions. A sin
 
 ## Status
 
-**30 October 2026:** This repository records the serial design, templates, and a proof-of-concept plan. It does **not** assert that self-editing scheduled tasks has been proven, that a recurring task has been created, or that unattended Git handovers have passed an end-to-end trial.
+**30 October 2026:** A disposable Serial Native scheduled task has been **created** for a bounded two-run proof. Creation is not proof of self-editing. Its generation-0 baseline, planned triggers and observed results are tracked in [proving/evidence.md](proving/evidence.md). Serial Git scheduled-run continuity also remains unverified.
 
 ## Scope
 
