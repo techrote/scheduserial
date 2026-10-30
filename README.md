@@ -46,7 +46,7 @@ Neither mode guarantees that the platform prevents overlapping executions. A sin
 
 ## Status
 
-**30 October 2026:** A disposable Serial Native scheduled task has been **created** for a bounded two-run proof. Creation is not proof of self-editing. Its generation-0 baseline, planned triggers and observed results are tracked in [proving/evidence.md](proving/evidence.md). Serial Git scheduled-run continuity also remains unverified.
+**30 October 2026:** A disposable Serial Native task passed the core two-execution scheduled proof: G0→G1 self-edit, G1 consumed by a separate execution, G1→G2 edit and verified self-pause. [Evidence](proving/evidence.md). Fault handling and exclusive execution remain unqualified. Serial Git is not yet verified.
 
 ## Scope
 
