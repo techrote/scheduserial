@@ -1,6 +1,6 @@
 # Neurounner #67 — Serial Native production proof
 
-**Status at setup (30 Oct 2026):** configured, **not yet executed**. This is a real-project continuation pilot, not a purely synthetic nonce test. The source of continuation instructions is exclusively the **saved prompt of one scheduled ChatGPT task**. This GitHub directory is a non-authoritative audit archive only.
+**Final outcome (31 Oct 2026): PASS.** Two distinct clock-scheduled source/engineering runs (G0 and G1) advanced the *same* saved task prompt to G2 and verified the task disabled. Both Neurounner PRs remain draft/unmerged and all scientific/training gates remain closed. See the [source-linked execution ledger](evidence.md) and [draft #223](https://github.com/techrote/neurounner/pull/223)/[draft #224](https://github.com/techrote/neurounner/pull/224).\n\n**Historical status at setup (30 Oct 2026):** configured, **not yet executed**. This is a real-project continuation pilot, not a purely synthetic nonce test. The source of continuation instructions is exclusively the **saved prompt of one scheduled ChatGPT task**. This GitHub directory is a non-authoritative audit archive only.
 
 ## Test identity
 
