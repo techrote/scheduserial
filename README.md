@@ -36,6 +36,7 @@ Neither mode guarantees that the platform prevents overlapping executions. A sin
 - [Post-restoration independent task audit](proving/post-restore-audit.md)
 - [Neurounner #67 production continuation proof](proving/neurounner-67/README.md)
 - [Neurounner #67 open-ended serial continuation (owner-authorized)](proving/neurounner-67/open-ended-continuation.md)
+- [Neurounner older-PR serial merge-down task](proving/neurounner-merge-down/README.md)
 - [Next qualification priorities](docs/next-qualification.md)
 
 ## Guardrails
